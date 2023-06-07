@@ -202,3 +202,15 @@ body {
 .movie:hover .overview {
     opacity: 1;
 }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--nav-color);
+    border-radius: 10px;
+}
