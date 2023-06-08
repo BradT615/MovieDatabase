@@ -23,12 +23,13 @@ function getMovies(url) {
 }
 
 function showMovies(data) {
-    main.innerHTML = '';
+    const movieRow = document.getElementById('movie-row');
+    movieRow.innerHTML = ''; // Clear out the existing movies
 
     data.forEach(movie => {
         const { title, poster_path, vote_average, overview } = movie;
         const movieElement = document.createElement('div');
-        movieElement.classList.add('movie');
+        movieElement.classList.add('col-12', 'col-lg-6', 'col-xl-3', 'p-3', 'mb-5', 'movie');
         movieElement.innerHTML = `
             <img src="${IMG_URL + poster_path}" alt="${title}">
             <div class="movie-info">
@@ -39,9 +40,8 @@ function showMovies(data) {
                 <h3>Overview</h3>
                 ${overview}
             </div>
-            `;
-
-        main.appendChild(movieElement);
+        `;
+        movieRow.appendChild(movieElement);
     });
 
     // Update vote color for each movie
@@ -52,6 +52,7 @@ function showMovies(data) {
         element.classList.add(colorClass);
     });
 }
+
 
 function getColor(vote) {
     if (vote >= 8) {
