@@ -24,7 +24,7 @@ function getMovies(url) {
 
 function showMovies(data) {
     const movieRow = document.getElementById('movie-row');
-    movieRow.innerHTML = ''; // Clear out the existing movies
+    movieRow.innerHTML = '';
 
     data.forEach(movie => {
         const { title, poster_path, vote_average, overview } = movie;
@@ -52,7 +52,6 @@ function showMovies(data) {
         element.classList.add(colorClass);
     });
 }
-
 
 function getColor(vote) {
     if (vote >= 8) {
