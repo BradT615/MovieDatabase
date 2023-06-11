@@ -23,44 +23,30 @@ function getMovies(url) {
 }
 
 function showMovies(data) {
-    const movieRow = document.getElementById('movie-row');
+    const movieRow = document.getElementById('movies');
     movieRow.innerHTML = '';
 
     data.forEach(movie => {
         const { title, poster_path, vote_average, overview } = movie;
         const movieElement = document.createElement('div');
-        movieElement.classList.add('col-12', 'col-lg-6', 'col-xl-3', 'p-3', 'mb-5', 'movie');
+        movieElement.classList.add('col-m-6', 'col-xl-3','p-0', 'movie');
         movieElement.innerHTML = `
-            <img src="${IMG_URL + poster_path}" alt="${title}">
-            <div class="movie-info">
-                <h3>${title}</h3>
-                <span class="vote-color">${vote_average}</span>
-            </div>
-            <div class="overview">
-                <h3>Overview</h3>
-                ${overview}
+            <div class="movie">
+                <div class="movie-img">
+                    <img src="${IMG_URL + poster_path}" alt="${title}">
+                </div>
+                <div class="movie-info">
+                    <div class="score">
+                        <h3>${vote_average}</h3>
+                    </div>
+                    <div class="movie-title">
+                        <h3>${title}</h3>
+                    </div>
+                </div>
             </div>
         `;
         movieRow.appendChild(movieElement);
     });
-
-    // Update vote color for each movie
-    const voteColorElements = document.querySelectorAll('.vote-color');
-    voteColorElements.forEach(element => {
-        const voteAverage = parseFloat(element.textContent);
-        const colorClass = getColor(voteAverage);
-        element.classList.add(colorClass);
-    });
-}
-
-function getColor(vote) {
-    if (vote >= 8) {
-        return 'green';
-    } else if (vote >= 5) {
-        return 'orange';
-    } else {
-        return 'red';
-    }
 }
 
 form.addEventListener('submit', (e) => {
@@ -74,3 +60,13 @@ form.addEventListener('submit', (e) => {
         getMovies(API_URL);
     }
 });
+
+//will add later
+// {/* <div class="overview">
+//     <div class="overview-title">
+//         <h3>Overview</h3>
+//     </div>
+//     <div class="overview-content">
+//         ${overview}
+//     </div>
+// </div> */}
