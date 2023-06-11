@@ -114,11 +114,9 @@ body {
     .form-control {
         font-size: 40px;
     }
-    .movie .movie-info {
-        width: 100%;
-    }
     .movie .movie-info h3 {
         font-size: 4rem;
+        width: 500px;
     }
 }
 
