@@ -109,7 +109,9 @@ body {
         font-size: 4rem;
     }
     #form {
-        width: 60%;
+        margin-top: 100px;
+        width: 70%;
+        height: 200px;
     }
     .form-control {
         font-size: 40px;
