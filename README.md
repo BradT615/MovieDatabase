@@ -7,7 +7,6 @@ Movie Database is a web application that allows users to search for movies and v
 - Search for movies by title or keywords
 - View movie details including title, poster image, average vote, and overview
 - Responsive design for optimal viewing on various devices
-- Pagination for browsing through multiple pages of movie results
 
 ## Technologies Used
 
