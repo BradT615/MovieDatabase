@@ -31,7 +31,7 @@ function showMovies(data) {
     data.forEach(movie => {
         const { id, title, poster_path, vote_average, overview } = movie;
         const movieElement = document.createElement('div');
-        movieElement.classList.add('col-m-6', 'col-xl-3', 'p-0', 'movie');
+        movieElement.classList.add('col-lg-6', 'col-xl-3', 'p-0', 'movie');
         movieElement.innerHTML = `
             <div class="movie">
                 <div class="movie-img">
