@@ -3,6 +3,9 @@
     --text-color: #F8F7F9;
     --bg-color: #1d2833;
 }
+html {
+    background-color: var(--nav-color);
+}
 body {
     background-color: var(--bg-color);
     font-family: 'Bebas Neue', sans-serif;
@@ -21,6 +24,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
+    max-width: 800px;
     height: 175px;
 }
 .form-control {
@@ -91,25 +95,49 @@ body {
 }
 @media (max-width: 1199px) {
     .navbar .navbar-brand {
-        font-size: 4rem;
+        font-size: 2rem;
     }
     #form {
-        margin-top: 100px;
-        width: 70%;
-        height: 200px;
+        margin-top: 50px;
+        width: 95%;
+        height: 170px;
     }
     .form-control {
-        font-size: 40px;
-    }
+        font-size: 30px;
+    } 
     .movie .movie-info h3 {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+}
+@media (max-width: 450px) {
+    .navbar .navbar-brand {
+        font-size: 1rem;
+    } 
+    #form {
+        margin-top: 50px;
+        width: 95%;
+        height: 150px;
+    }
+    .form-control {
+        font-size: 20px;
+    } 
+    .movie .movie-info h3 {
+        font-size: 2rem;
+    }
+    .github {
+        scale: 0.6;
     }
 }
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 ::-webkit-scrollbar-thumb {
     background: var(--nav-color);
     border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color); /* Custom track color */
+    margin-top: 86px;
 }
